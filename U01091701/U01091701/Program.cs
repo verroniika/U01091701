@@ -8,16 +8,16 @@ namespace U01091701
         {
             //Uppgift A 
             Console.WriteLine("Skriv in en mening: ");
-            string mening = Console.ReadLine();
+            string sentence = Console.ReadLine();
             Console.WriteLine("");
 
-            string[] j = mening.Split(' ');
+            string[] j = sentence.Split(' ');
             Console.WriteLine("Din mening består av orden: ");
 
-            foreach (string ord in j)
+            foreach (string word in j)
             {
-                int antalTecken = ord.Length;
-                Console.WriteLine(ord + " (" + antalTecken + ")");
+                int antalTecken = word.Length;
+                Console.WriteLine(word + " (" + antalTecken + ")");
             }
 
             Console.WriteLine("");
@@ -30,12 +30,19 @@ namespace U01091701
 
             string[] words = input.Split(' ');
 
-            foreach (string str in words) Console.Write(str + " ");
-            foreach (string word in words)
+            Array.Sort(words, (x, y) => x.Length.CompareTo(y.Length));
+            foreach (string s in words)
             {
-                Console.WriteLine(word);
+                Console.WriteLine(s);
             }
 
+            Console.WriteLine("");
+
+            Array.Sort(words, (x, y) => y.Length.CompareTo(x.Length));
+            foreach (string s in words)
+            {
+                Console.WriteLine(s);
+            }
 
             //Uppgift E
 
@@ -48,26 +55,26 @@ namespace U01091701
 
             }
 
-            /*//Uppgift F
+            //Uppgift F
 
-        Random random = new Random();
+            Random random = new Random();
 
-        int returnValue = random.Next(1, 21);
+            int returnValue = random.Next(1, 21);
 
-        Console.WriteLine("Gissa på ett nummer mellan 1-21: ");
-        Start:
-        int guess = int.Parse(Console.ReadLine());
+            Console.WriteLine("Gissa på ett nummer mellan 1-21: ");
+            Start:
+            int guess = int.Parse(Console.ReadLine());
 
-        if (guess != returnValue)
-        {
-            Console.WriteLine(guess + " var fel, gissa igen!!");
-            goto Start;
-        }
+            if (guess != returnValue)
+            {
+                Console.WriteLine(guess + " var fel, gissa igen!!");
+                goto Start;
+            }
 
-        else
-        {
-            Console.WriteLine("Du gissade rätt!! Det rätta talet var " + returnValue);
-        }*/
+            else
+            {
+                Console.WriteLine("Du gissade rätt!! Det rätta talet var " + returnValue);
+            }
         }
     }
 }
