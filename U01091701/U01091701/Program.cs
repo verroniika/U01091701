@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace U01091701
 {
@@ -7,6 +8,7 @@ namespace U01091701
         static void Main(string[] args)
         {
             //Uppgift A 
+            Console.WriteLine("Uppgift A");
             Console.WriteLine("Skriv in en mening: ");
             string sentence = Console.ReadLine();
             Console.WriteLine("");
@@ -24,6 +26,7 @@ namespace U01091701
 
             //Uppgift B
 
+            Console.WriteLine("Uppgift B");
             Console.WriteLine("Mata in en mening: ");
             string input = Console.ReadLine();
             Console.WriteLine("");
@@ -43,6 +46,22 @@ namespace U01091701
             {
                 Console.WriteLine(s);
             }
+
+            //Uppgift C
+
+            Console.WriteLine("Uppgift C");
+            Console.WriteLine("Skriv in en mening: ");
+            string c = Console.ReadLine();
+
+            string[] z = c.Split(' ');
+            var distz = z.Distinct();
+
+            foreach (string s in distz)
+            {
+                Console.WriteLine(s);
+               //Console.WriteLine(s.DuplicateCount); //Borde funka kolla också group by c#
+            }
+
 
             //Uppgift E
 
